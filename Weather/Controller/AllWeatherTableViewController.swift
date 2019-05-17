@@ -21,8 +21,6 @@ class AllWeatherTableViewController: UITableViewController, CLLocationManagerDel
         super.viewDidLoad()
     }
     
-    // MARK: - Table view data source
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listik?.count ?? 0
     }
@@ -37,7 +35,7 @@ class AllWeatherTableViewController: UITableViewController, CLLocationManagerDel
             return cell
         }
         
-        return UITableViewCell()  // если прийдет nil - вернется пустая ячейка
+        return UITableViewCell()
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

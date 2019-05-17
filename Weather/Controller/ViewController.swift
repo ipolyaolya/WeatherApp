@@ -39,8 +39,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     let gradientLayer = CAGradientLayer()
     
     let apiKey = "8578ae47b67ff52ffebacba310a72796"
-    var lat = 11.344533                   // широта
-    var lon = 104.33322                   // долгота
+    var lat = 11.344533
+    var lon = 104.33322
     var activityIndicator: NVActivityIndicatorView!
     let locationManager = CLLocationManager()
     var dayBoss: String = ""
@@ -83,8 +83,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 
                 // из json сделаем data (для записи)
                 let data = try! jsonResponse.rawData()
-                
-                // parsedResult - тут записаны все данные 
+ 
                 self.parsedResult = try! JSONDecoder().decode(JSONAnswer.self, from: data)
                 guard let parsedResult = self.parsedResult, let list = parsedResult.list.first else {
                     return
@@ -142,7 +141,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         gradientLayer.colors = [topColor, bottomColor]
     }
 
-    // передача данных
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destViewController: AllWeatherTableViewController = segue.destination as! AllWeatherTableViewController
 

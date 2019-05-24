@@ -32,7 +32,9 @@ class AllWeatherTableViewCell: UITableViewCell {
         super.awakeFromNib()
         let view = UIView()
         view.backgroundColor = UIColor(red: 1.0/255.0, green: 166.0/255.0, blue: 158.0/255.0, alpha: 1.0)
-        selectedBackgroundView = view    }
+        selectedBackgroundView = view
+        
+    }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -42,7 +44,7 @@ class AllWeatherTableViewCell: UITableViewCell {
         dayLabel.text = Date().dayOfWeek(date: model.dt_txt)
         timeLabel.text = Date().timeWeather(date: model.dt_txt)
         imageImageView.image = UIImage(named: model.weather[0].icon)
-        tempMaxLabel.text = "\(Int(round(model.main.temp_max)))"
+        tempMaxLabel.text = "\(Int(round(model.main.tempMax)))"
         tempMinLabel.text = "\(Int(round(model.main.tempMin)))"
     }
 

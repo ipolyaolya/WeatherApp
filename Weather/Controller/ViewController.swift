@@ -102,21 +102,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 self.locationLabel.text = "\(city.name)"
                 
                 self.temperatureLabel.text = "\(Int(round(mainInf.temp)))°"
-                self.tempMaxLabel.text = "\(Int(round(mainInf.temp_max)))°"
+                self.tempMaxLabel.text = "\(Int(round(mainInf.tempMax)))°"
                 self.tempMinLabel.text = "\(Int(round(mainInf.tempMin)))°"
                 self.myTimeLabel.text = Date().timeWeather(date: dateInf)
 
                 self.dayLabel.text = Date().dayOfWeek(date: dateInf)
                 self.dayMiniLabel.text = Date().dayOfWeek(date: dateInf)
                 
-                let suffix = weatherInf.icon.suffix(1)
-                if(suffix == "n") {
-                    self.setGreyGradientBackground()
-                } else {
-                    self.setBlueGradientBackground()
-                }
-                
-            }
+        }
         }
         self.locationManager.stopUpdatingLocation()
         print("локейшн отабдейтили")
@@ -130,13 +123,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func setBlueGradientBackground(){
         let topColor = UIColor(red: 27.0/255.0, green: 118.0/255.0, blue: 187.0/255.0, alpha: 1.0).cgColor
         let bottomColor = UIColor(red: 1.0/255.0, green: 166.0/255.0, blue: 158.0/255.0, alpha: 1.0).cgColor
-        gradientLayer.frame = view.bounds
-        gradientLayer.colors = [topColor, bottomColor]
-    }
-    
-    func setGreyGradientBackground(){
-        let topColor = UIColor(red: 151.0/255.0, green: 151.0/255.0, blue: 151.0/255.0, alpha: 1.0).cgColor
-        let bottomColor = UIColor(red: 72.0/255.0, green: 72.0/255.0, blue: 72.0/255.0, alpha: 1.0).cgColor
         gradientLayer.frame = view.bounds
         gradientLayer.colors = [topColor, bottomColor]
     }

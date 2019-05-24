@@ -11,22 +11,22 @@ import Foundation
 struct Main: Decodable {
     var temp: Double
     var tempMin: Double
-    var temp_max: Double
+    var tempMax: Double
     var pressure: Double
-    var sea_level: Double
-    var grnd_level: Double
+    var seaLevel: Double
+    var grndLevel: Double
     var humidity: Int
-    var temp_kf: Double
+    var tempKf: Double
 
     enum MainKeys: String, CodingKey {
         case temp
         case tempMin = "temp_min"
-        case temp_max
+        case tempMax = "temp_max"
         case pressure
-        case sea_level
-        case grnd_level
+        case seaLevel = "sea_level"
+        case grndLevel = "grnd_level"
         case humidity
-        case temp_kf
+        case tempKf = "temp_kf"
     }
     
     init(from decoder: Decoder) throws {
@@ -34,11 +34,11 @@ struct Main: Decodable {
         
         self.temp = try container.decode(Double.self, forKey: .temp)
         self.tempMin = try container.decode(Double.self, forKey: .tempMin)
-        self.temp_max = try container.decode(Double.self, forKey: .temp_max)
+        self.tempMax = try container.decode(Double.self, forKey: .tempMax)
         self.pressure = try container.decode(Double.self, forKey: .pressure)
-        self.sea_level = try container.decode(Double.self, forKey: .sea_level)
-        self.grnd_level = try container.decode(Double.self, forKey: .grnd_level)
+        self.seaLevel = try container.decode(Double.self, forKey: .seaLevel)
+        self.grndLevel = try container.decode(Double.self, forKey: .grndLevel)
         self.humidity = try container.decode(Int.self, forKey: .humidity)
-        self.temp_kf = try container.decode(Double.self, forKey: .temp_kf)
+        self.tempKf = try container.decode(Double.self, forKey: .tempKf)
     }
 }

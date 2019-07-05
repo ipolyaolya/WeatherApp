@@ -1,7 +1,7 @@
 # Weather
 
 Прогноз погоды на 5 дней.
-(с помощью сервиса openweathermap)
+(API openweathermap)
 
 - определение геолокации
 - max/min температура 
